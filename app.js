@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 
-app.post('/get-meta',async(req,res)=>{
+app.post('/get-meta-data',async(req,res)=>{
     try {
         //bodyParams
         const bodyParams = req.body;
@@ -29,7 +29,7 @@ app.post('/get-meta',async(req,res)=>{
             //sending success response to user    
             res.status(200).send(result);
         }else{
-            res.status(404).send({status:'faiure',message: 'url canot be null!'});
+            res.status(404).send({status:'failure',message: 'url canot be null!'});
         }
         
     } catch (error) {
@@ -43,3 +43,6 @@ app.post('/get-meta',async(req,res)=>{
 const port = 2020;
 //listen for an HTTP request
 app.listen(port,console.log(`The server is listening on port ${port}`));
+
+
+module.exports = app;
