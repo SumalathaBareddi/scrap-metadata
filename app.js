@@ -19,19 +19,18 @@ app.use(bodyParser.urlencoded({
 app.post('/get-meta',async(req,res)=>{
     try {
         //bodyParams
-    const bodyParams = req.body;
-    //body parameters extraction
-    const {url} = bodyParams;
-        //parameter checking 
-    if(url){
-        //extracting the result from package 
-        var result = await Meta.parser(req.body.url);    
-        //sending success response to user    
-        res.status(200).send(result);
-    }else{
-        res.status(404).send({status:'faiure',message: 'url canot be null!'});
-    }
-    
+        const bodyParams = req.body;
+        //body parameters extraction
+        const {url} = bodyParams;
+            //parameter checking 
+        if(url){
+            //extracting the result from package 
+            var result = await Meta.parser(req.body.url);    
+            //sending success response to user    
+            res.status(200).send(result);
+        }else{
+            res.status(404).send({status:'faiure',message: 'url canot be null!'});
+        }
         
     } catch (error) {
         //sending error response to user    
