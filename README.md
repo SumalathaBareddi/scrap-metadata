@@ -38,5 +38,5 @@ node app.js
 ```
 a. POSTMAN
 
-make a post request  to http://localhost:2020/get-meta 
+make a post request  to http://localhost:2020/get-meta-data
 ```
